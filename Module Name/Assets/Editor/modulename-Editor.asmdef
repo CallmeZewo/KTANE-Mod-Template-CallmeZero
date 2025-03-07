@@ -1,0 +1,10 @@
+{
+  "name": "modulename-Editor",
+  "references": [
+    "modulename"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": []
+}

@@ -61,7 +61,7 @@ public class ModuleName : MonoBehaviour
     {
         GetComponent<KMBombModule>().HandleStrike();
     }
-
+    /* Delete this if you dont want TP integration
 #pragma warning disable 414
     private readonly string TwitchHelpMessage = @"Use !{0} to do something.";
 #pragma warning restore 414
@@ -74,5 +74,5 @@ public class ModuleName : MonoBehaviour
     IEnumerator TwitchHandleForcedSolve()
     {
         yield return null;
-    }
+    }*/
 }
