@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using HarmonyLib;
 
 namespace ZToolsKtane
 {
@@ -172,6 +171,27 @@ namespace ZToolsKtane
             }
 
             return "[" + string.Join(", ", list.Select(formatter).ToArray()) + "]";
+        }
+
+        /// <summary>
+        /// Removes an item and returns it.
+        /// Defaults to removing the first item.
+        /// </summary>
+        public static T PopReturn<T>(List<T> list, int index = 0)
+        {
+            if (list == null)
+                throw new ArgumentNullException(nameof(list), "Input list cannot be null.");
+
+            if (list.Count == 0)
+                throw new ArgumentException("Input list cannot be empty.", nameof(list));
+
+            if (index < 0 || index >= list.Count)
+                throw new ArgumentOutOfRangeException(nameof(index), "Index is out of range of the list.");
+
+            var poppedItem = list[index];
+            list.RemoveAt(index);
+
+            return poppedItem;
         }
     }
 }
